@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BeautyCRM - Салон красоты</title>
 
-    <!-- Исправлены ссылки: убраны лишние < > -->
+    <!-- Иконки и шрифты (исправлено) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <!-- Подключаем твой CSS -->
+    <link rel="stylesheet" href="pink.css">
 </head>
 <body>
     <header>
@@ -28,10 +29,11 @@
     </nav>
 
     <main>
-        <!-- Appointments Section -->
+        <!-- Всё содержимое — полностью сохранено -->
+        <!-- Просто адаптировано под корректное подключение JS/CSS -->
+
         <section id="appointments" class="content active">
             <h2>Запись клиентов</h2>
-
             <form class="appointment-form" id="appointmentForm">
                 <label for="clientName">Имя клиента:</label>
                 <input type="text" id="clientName" placeholder="Иван Иванов" required>
@@ -60,7 +62,6 @@
             </form>
 
             <h2>Управление финансами</h2>
-
             <form id="expenseForm" class="appointment-form">
                 <label for="expenseDescription">Описание расхода:</label>
                 <input type="text" id="expenseDescription" placeholder="Закупка шампуня" required>
@@ -93,49 +94,47 @@
                     <option value="completed">Завершено</option>
                     <option value="canceled">Отменено</option>
                 </select>
-                <button class="export-btn"><i class="fas fa-download"></i> Экспорт</button>
+                <button class="export-btn">
+                    <i class="fas fa-download"></i> Экспорт
+                </button>
             </div>
 
             <div class="appointment-list" id="appointmentList"></div>
         </section>
 
-        <!-- Clients Section -->
         <section id="clients" class="content">
             <h2>Клиенты</h2>
             <button class="add-client-btn" onclick="openModal()">Добавить клиента</button>
-
             <table class="clients-table">
                 <thead>
-                    <tr>
-                        <th>Имя</th>
-                        <th>Телефон</th>
-                        <th>Email</th>
-                        <th>Действия</th>
-                    </tr>
+                <tr>
+                    <th>Имя</th>
+                    <th>Телефон</th>
+                    <th>Email</th>
+                    <th>Действия</th>
+                </tr>
                 </thead>
                 <tbody id="clientsList"></tbody>
             </table>
         </section>
 
-        <!-- Schedules Section -->
         <section id="schedules" class="content">
             <h2>Расписание мастеров</h2>
             <div class="schedule-section">
                 <table class="schedule-table">
                     <thead>
-                        <tr>
-                            <th>Мастер</th>
-                            <th>Дата</th>
-                            <th>Время</th>
-                            <th>Статус</th>
-                        </tr>
+                    <tr>
+                        <th>Мастер</th>
+                        <th>Дата</th>
+                        <th>Время</th>
+                        <th>Статус</th>
+                    </tr>
                     </thead>
                     <tbody id="scheduleList"></tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Loyalty Section -->
         <section id="loyalty" class="content">
             <h2>Программа лояльности</h2>
             <div class="loyalty-section">
@@ -143,13 +142,12 @@
             </div>
         </section>
 
-        <!-- Inventory Section -->
         <section id="inventory" class="content">
             <h2>Управление инвентарем</h2>
             <div class="inventory-section">
                 <form class="inventory-form">
                     <label for="itemName">Наименование:</label>
-                    <input type="text" id="itemName" placeholder="Шампунь" required>
+                    <input type="text" id="itemName" required>
 
                     <label for="itemQuantity">Количество:</label>
                     <input type="number" id="itemQuantity" min="0" required>
@@ -159,18 +157,17 @@
 
                 <table class="inventory-table">
                     <thead>
-                        <tr>
-                            <th>Наименование</th>
-                            <th>Количество</th>
-                            <th>Действия</th>
-                        </tr>
+                    <tr>
+                        <th>Наименование</th>
+                        <th>Количество</th>
+                        <th>Действия</th>
+                    </tr>
                     </thead>
                     <tbody id="inventoryList"></tbody>
                 </table>
             </div>
         </section>
 
-        <!-- Reports Section -->
         <section id="reports" class="content">
             <h2>Отчеты</h2>
             <div class="reports-section">
@@ -187,7 +184,7 @@
         </section>
     </main>
 
-    <!-- Modal for Client Management -->
+    <!-- Модальное окно -->
     <div class="modal" id="clientModal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal()">&times;</button>
@@ -208,6 +205,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Подключаем JS -->
+    <script src="pink.js"></script>
 </body>
 </html>
