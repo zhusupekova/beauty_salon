@@ -1,0 +1,663 @@
+:root {
+    --primary-color: #ff69b4;
+    --primary-hover: #e55a9f;
+    --secondary-color: #2196f3;
+    --warning-color: #ff9800;
+    --success-color: #4caf50;
+    --error-color: #f44336;
+    --background-color: #f9f9f9;
+    --card-background: #ffffff;
+    --text-color: #333333;
+    --border-color: #cccccc;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --font-family: 'Roboto', 'Arial', sans-serif;
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding: 20px;
+    font-size: 16px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+nav {
+    background-color: var(--card-background);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.nav-link {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: var(--primary-color);
+    color: white;
+    outline: none;
+}
+
+.nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.content {
+    display: none;
+    padding: 20px;
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.content.active {
+    display: block;
+}
+
+.appointment-form,
+#expenseForm,
+.service-form,
+.inventory-form {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.appointment-form label,
+#expenseForm label,
+.service-form label,
+.inventory-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.appointment-form input,
+.appointment-form select,
+#expenseForm input,
+#expenseForm select,
+.service-form input,
+.service-form select,
+.inventory-form input,
+.inventory-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.appointment-form input:focus,
+.appointment-form select:focus,
+#expenseForm input:focus,
+#expenseForm select:focus,
+.service-form input:focus,
+.service-form select:focus,
+.inventory-form input:focus,
+.inventory-form select:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.appointment-form button,
+#expenseForm button,
+.service-form button,
+.inventory-form button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.appointment-form button:hover,
+.appointment-form button:focus,
+#expenseForm button:hover,
+#expenseForm button:focus,
+.service-form button:hover,
+.service-form button:focus,
+.inventory-form button:hover,
+.inventory-form button:focus {
+    background-color: var(--primary-hover);
+    outline: none;
+}
+
+.appointment-list {
+    display: grid;
+    gap: 20px;
+}
+
+.appointment-card {
+    background-color: var(--card-background);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.appointment-card:hover {
+    transform: translateY(-2px);
+}
+
+.appointment-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.appointment-card p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.appointment-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cancel-btn,
+.complete-btn,
+.reminder-btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.cancel-btn {
+    background-color: var(--error-color);
+    color: white;
+}
+
+.cancel-btn:hover,
+.cancel-btn:focus {
+    background-color: #d32f2f;
+    outline: none;
+}
+
+.complete-btn {
+    background-color: var(--success-color);
+    color: white;
+}
+
+.complete-btn:hover,
+.complete-btn:focus {
+    background-color: #388e3c;
+    outline: none;
+}
+
+.reminder-btn {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+.reminder-btn:hover,
+.reminder-btn:focus {
+    background-color: #f57c00;
+    outline: none;
+}
+
+.financial-summary {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.financial-summary select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.financial-summary p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.appointment-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.appointment-filters input,
+.appointment-filters select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+    flex: 1;
+}
+
+.export-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.export-btn:hover,
+.export-btn:focus {
+    background-color: #1976d2;
+    outline: none;
+}
+
+.clients-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-background);
+    box-shadow: var(--shadow);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.clients-table th,
+.clients-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.clients-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.clients-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+.add-client-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.add-client-btn:hover,
+.add-client-btn:focus {
+    background-color: var(--primary-hover);
+    outline: none;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.action-btn:hover,
+.action-btn:focus {
+    color: var(--primary-hover);
+    outline: none;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--primary-color);
+    outline: none;
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.modal-content button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.modal-content button:hover,
+.modal-content button:focus {
+    background-color: var(--primary-hover);
+    outline: none;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+.notification.success {
+    background-color: var(--success-color);
+    color: white;
+}
+.notification.error {
+    background-color: var(--error-color);
+    color: white;
+}
+.notification.warning {
+    background-color: var(--warning-color);
+    color: white;
+}
+.notification.info {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.close-notification {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.close-notification:hover,
+.close-notification:focus {
+    color: #f0f0f0;
+    outline: none;
+}
+
+.notification.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.schedule-section {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.schedule-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.loyalty-section {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.loyalty-section .loyalty-info {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.inventory-section {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.inventory-table th,
+.inventory-table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.inventory-table th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.reports-section {
+    background-color: var(--card-background);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.reports-section .report-filter {
+    margin-bottom: 15px;
+}
+
+.reports-section .report-filter select {
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+[role="button"],
+button,
+input[type="submit"] {
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding: 40px;
+    }
+
+    .appointment-list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .appointment-form,
+    #expenseForm,
+    .service-form,
+    .inventory-form {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav-list {
+        gap: 20px;
+    }
+
+    .content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        padding: 10px;
+    }
+
+    .appointment-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .appointment-actions button {
+        width: 100%;
+    }
+
+    .appointment-filters {
+        flex-direction: column;
+    }
+
+    .appointment-filters input,
+    .appointment-filters select,
+    .export-btn {
+        width: 100%;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    .clients-table,
+    .schedule-table,
+    .inventory-table {
+        font-size: 14px;
+    }
+
+    .clients-table th,
+    .clients-table td,
+    .schedule-table th,
+    .schedule-table td,
+    .inventory-table th,
+    .inventory-table td {
+        padding: 8px;
+    }
+}
