@@ -65,7 +65,9 @@ function addAppointment(e) {
         return;
     }
 
-    const [serviceName, price] = service.split(' - ');
+    const [serviceName, price] = service.includes(' - ')
+        ? service.split(' - ')
+        : [service, '0'];
     const appointment = {
         id: Date.now(),
         clientName,
@@ -120,7 +122,7 @@ function displayAppointments(filteredAppointments = appointments) {
         card.innerHTML = `
             <h4>${app.clientName}</h4>
             <p>Услуга: ${app.service}</p>
-            <p>Цена: ${app.price} ₽</p>
+            <p>Условия: по запросу</p>
             <p>Мастер: ${app.master}</p>
             <p>Дата: ${app.date}</p>
             <p>Время: ${app.time}</p>
@@ -301,9 +303,9 @@ function displayFinancialSummary() {
     const profit = revenue - expenseTotal;
 
     financialSummary.innerHTML = `
-        <p>Выручка: ${revenue.toFixed(2)} ₽</p>
-        <p>Расходы: ${expenseTotal.toFixed(2)} ₽</p>
-        <p>Прибыль: ${profit.toFixed(2)} ₽</p>
+        <p>Выручка скрыта</p>
+        <p>Расходы скрыты</p>
+        <p>Прибыль скрыта</p>
     `;
 }
 
@@ -396,7 +398,7 @@ function displayReports() {
             const revenue = appointments
                 .filter(app => app.status === 'completed')
                 .reduce((sum, app) => sum + (app.price || 0), 0);
-            output = `<p>Общая выручка: ${revenue.toFixed(2)} ₽</p>`;
+            output = `<p>Общая выручка скрыта</p>`;
         } else if (type === 'workload') {
             const masters = [...new Set(appointments.map(app => app.master))];
             output = masters
@@ -447,7 +449,7 @@ function exportToCSV() {
             'ID',
             'Клиент',
             'Услуга',
-            'Цена',
+            'Условия',
             'Мастер',
             'Дата',
             'Время',
